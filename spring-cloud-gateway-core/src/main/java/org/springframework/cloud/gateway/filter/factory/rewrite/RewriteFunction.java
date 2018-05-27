@@ -17,9 +17,10 @@
 
 package org.springframework.cloud.gateway.filter.factory.rewrite;
 
-import org.springframework.web.server.ServerWebExchange;
-
 import java.util.function.BiFunction;
 
-public interface RewriteFunction<T, R> extends BiFunction<ServerWebExchange, T, R> {
+import org.reactivestreams.Publisher;
+import org.springframework.web.server.ServerWebExchange;
+
+public interface RewriteFunction<T, R> extends BiFunction<ServerWebExchange, T, Publisher<R>> {
 }
